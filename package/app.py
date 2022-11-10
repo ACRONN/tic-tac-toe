@@ -29,4 +29,5 @@ def createArray(rows,cols):
     arr = [["-" for i in range(cols)] for j in range(rows)]
     return arr
 
-game(createArray(3,3))
+def run():
+    game(createArray(3,3))
