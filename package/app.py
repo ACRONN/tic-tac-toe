@@ -1,7 +1,10 @@
 maxRow = 2
 maxColumn = 2
 
-def game(array):
+def computerGame(array):
+    pass
+
+def localGame(array):
     turn = 1
     score = ["O","X"]
     current_player = ""
@@ -38,4 +41,13 @@ def createArray(rows,cols):
     return arr
 
 def run():
-    game(createArray(3,3))
+    while True:
+        gameMode = input("\n[1] Computer\n[2] Two-Player\n\nEnter game mode to play: ")
+        if gameMode == "1":
+            computerGame(createArray(3,3))
+        elif gameMode == "2":
+            localGame(createArray(3,3))
+        else:
+            print("Please enter a valid game mode.\n")
+            continue
+        break
