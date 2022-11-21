@@ -35,11 +35,30 @@ class TicTacToe():
                     continue
 
             # Need to implement win condition.
-
+            win = self.winCondition(array)
             turn += 1
+            if turn == 10:
+                win = True
+                print("Draw")
             for i in range(len(array)):
                 print(array[i])
 
     def createArray(self, rows, cols):
         arr = [["-" for i in range(cols)] for j in range(rows)]
         return arr
+    def winCondition(self, array):
+        for i in range(2):
+            if array[i][0] == array[i][1] == array[i][2] != "-":
+                print('horizontal')
+                return True
+            if array[0][i] == array[1][i] == array[2][i] != "-":
+                print('vertical')
+                return True
+        if array[0][0] == array[1][1] == array[2][2] != "-":
+            print('left diagonal')
+            return True
+        if array[0][2] == array[1][1] == array[2][0] != "-":
+            print('right diagonal')
+            return True
+        else:
+            return False
